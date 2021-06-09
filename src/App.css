@@ -1,0 +1,48 @@
+.app-wrapper {
+  margin: 0 auto;
+  width: 1240px;
+  display: grid;
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 2fr 10fr;
+  grid-gap: 10px;
+  grid-template-areas: 'h h'
+  'n c';
+}
+
+.app-wrapper .header {
+  background-color: khaki;
+  grid-area: h;
+}
+
+.app-wrapper .nav {
+  background-color:khaki;
+  grid-area: n;
+}
+
+.app-wrapper .content {
+  grid-area: c;
+}
+
+.app-wrapper .content .avatar-and-description {
+  display: inline-block;
+  width: 100%;
+}
+
+.app-wrapper .header img {
+  width: 90px;
+}
+
+.app-wrapper .nav a {
+  color: black;
+}
+
+.app-wrapper .content .background-img img {
+  height: 150px;
+  width: 100%;
+}
+
+.app-wrapper .content .avatar-and-description img {
+  float:left;
+  height: 180px;
+}
+
