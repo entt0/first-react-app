@@ -1,0 +1,11 @@
+.header {
+    background-color: khaki;
+    grid-area: h;
+  }
+
+.header img {
+    display: block;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 90px;
+}

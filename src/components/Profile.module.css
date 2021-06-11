@@ -1,0 +1,28 @@
+.content {
+    grid-area: c;
+}
+  
+.avatarAndDescription {
+    display: inline-block;
+    width: 100%;
+}
+
+.posts {
+    display: block;
+    margin: 10px;
+}
+
+.backgroundImg img {
+    height: 150px;
+    width: 100%;
+}
+  
+.avatarAndDescription img {
+    float: left;
+    height: 180px;
+}
+
+.avatarAndDescription div{
+    margin-top: 20px;
+    margin-left: 200px;
+}

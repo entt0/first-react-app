@@ -1,0 +1,19 @@
+.nav {
+    background-color:khaki;
+    grid-area: n;
+    padding-left: 15px;
+    padding-top: 20px;
+}
+
+.nav a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+    padding-top: 3px;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+    color:saddlebrown;
+}

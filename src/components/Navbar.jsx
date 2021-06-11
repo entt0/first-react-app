@@ -1,6 +1,8 @@
+import s from './Navbar.module.css';
+
 const Navbar = () => {
     return (
-        <nav className='nav'>
+        <nav className={s.nav}>
             <div>
                 <a href=''>Profile</a>
             </div>
@@ -13,6 +15,7 @@ const Navbar = () => {
             <div>
                 <a href=''>Music</a>
             </div>
+            <p></p>
             <div>
                 <a href=''>Settings</a>
             </div>
