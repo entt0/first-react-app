@@ -1,0 +1,19 @@
+.postsWrapper {
+    display: block;
+    margin: 10px;
+
+}
+
+.addPostsWrapper {
+    margin-bottom: 15px;
+}
+
+.addPostButton {
+    margin-left: 10px;
+    background-color: antiquewhite;
+    border-radius: 7px;
+}
+
+textarea {
+    border: black 2px solid;
+}
