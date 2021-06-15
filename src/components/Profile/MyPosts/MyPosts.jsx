@@ -9,8 +9,8 @@ let MyPosts = () => {
                 <textarea rows='4' cols='100'> Write your message here</textarea>
                 <button className={s.addPostButton}>Add Post</button>
             </div>
-            <Post message='My first post: "Hallo, World"'/>
-            <Post message='I want to be a programmer'/>
+            <Post message='My first post: "Hallo, World"' likesCount='2'/>
+            <Post message='I want to be a programmer' likesCount='5'/>
         </div>
     );
 }

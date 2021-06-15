@@ -7,7 +7,7 @@ let Post = (props) => {
             <div className={s.item}>
                 {props.message}
             </div>
-            <button className={s.like}>Like It</button>
+            <button className={s.like}>Like It</button> {props.likesCount} likes
         </div>
     );
 }
