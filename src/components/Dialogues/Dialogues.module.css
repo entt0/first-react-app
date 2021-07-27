@@ -1,17 +1,30 @@
 .dialogues {
     display: grid;
-    grid-template-columns: 3fr 10fr;
+    grid-template-columns: 3fr 5fr 5fr;
 }
 
 .dialoguesItems {
     padding: 10px;
 }
 
-.dialoguesItems .active {
+.dialoguesItems a {
+    text-decoration: none;
+    color: black;
+}
+
+.dialoguesItems a:hover {
+    color: saddlebrown;
+}
+
+.dialoguesItems a:focus {
     color: brown;
 }
 
 .messages {
+    padding: 10px;
+}
+
+.answers {
     padding: 10px;
 }
 

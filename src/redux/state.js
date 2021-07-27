@@ -49,8 +49,14 @@ let state = {
         messages: [
             {id: 1, message: 'Hi,bro'},
             {id: 2, message: 'How is your exam?'},
-            {id: 3, message: 'Kein Kommentar'}
-        ]
+            {id: 3, message: 'My Congratulations'}
+        ],
+        answers: [
+            {id: 1, answer: 'Hi'},
+            {id: 2, answer: 'Not Bad'},
+            {id: 3, answer: ':)'}
+        ],
+
     }
 }
 
