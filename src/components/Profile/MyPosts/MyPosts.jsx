@@ -4,8 +4,8 @@ import Post from "./Post/Post";
 let MyPosts = (props) => {
 
     let postsElements = props.posts
-        .map( p => (<Post message={p.message} likesCount={p.likes}/>)
-    );
+        .map(p => (<Post message={p.message} likesCount={p.likes}/>)
+        );
 
     return (
         <div className={s.postsWrapper}>

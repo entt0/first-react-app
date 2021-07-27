@@ -14,3 +14,10 @@
 .messages {
     padding: 10px;
 }
+
+.dialogue img {
+    height: 36px;
+    width: 36px;
+    margin-right: 5px;
+    border-radius: 18px;
+}
