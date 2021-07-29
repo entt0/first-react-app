@@ -1,5 +1,6 @@
 import s from "./MyPosts.module.css";
 import Post from "./Post/Post";
+import React from "react";
 
 let MyPosts = (props) => {
 
@@ -7,12 +8,19 @@ let MyPosts = (props) => {
         .map(p => (<Post message={p.message} likesCount={p.likes}/>)
         );
 
+    let newPostElement = React.createRef();
+
+    let addPost = () => {
+        let text = newPostElement.current.value;
+        alert(text);
+    }
+
     return (
         <div className={s.postsWrapper}>
             <h4>My posts</h4>
             <div className={s.addPostsWrapper}>
-                <textarea rows='4' cols='100'> Write your message here</textarea>
-                <button className={s.addPostButton}>Add Post</button>
+                <textarea ref={newPostElement} rows='4' cols='100'> Write your message here</textarea>
+                <button onClick={addPost} className={s.addPostButton}>Add Post</button>
             </div>
             {postsElements}
         </div>
