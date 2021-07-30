@@ -1,0 +1,23 @@
+.dialoguesItems {
+    grid-area: d;
+}
+
+.dialoguesItems a {
+    text-decoration: none;
+    color: black;
+}
+
+.dialoguesItems a:hover {
+    color: saddlebrown;
+}
+
+.dialoguesItems a:focus {
+    color: brown;
+}
+
+.dialoguesItems img {
+    height: 36px;
+    width: 36px;
+    margin-right: 5px;
+    border-radius: 18px;
+}

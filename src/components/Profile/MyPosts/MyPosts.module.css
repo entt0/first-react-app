@@ -14,6 +14,7 @@
     border-radius: 7px;
 }
 
-textarea {
+.addPostsWrapper textarea {
     border: black 2px solid;
+    resize: none;
 }

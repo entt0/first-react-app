@@ -1,4 +1,4 @@
-import s from "./../Dialogues.module.css";
+import s from './Answer.module.css';
 
 const Answer = (props) => {
     return (

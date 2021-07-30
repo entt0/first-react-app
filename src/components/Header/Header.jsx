@@ -3,7 +3,7 @@ import s from './Header.module.css'
 const Header = () => {
     return (
         <header className={s.header}>
-            <img alt='logo of app' src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Free_logo.svg/440px-Free_logo.svg.png' />
+            <img alt='logo of app' src='https://psv4.userapi.com/c505536/u72075069/docs/d4/6bcd58b931bd/maias.png?extra=JccmhbOWDlmw1UnsvDd7QF6eguugE0PrBCkKpPYbb2lUVIZbIW_FT5iQkSTLz1InyYxSQedTBpiRL6hZ9z_qOiG5zTcI3vsAX9sFQ5WqLgkQAwvdK7hR2dpeD4CXtxyoDNQLbCbZjGYu7wVWev6EiiA' />
         </header>
     );
 }

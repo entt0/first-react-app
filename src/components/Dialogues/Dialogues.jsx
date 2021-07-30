@@ -2,6 +2,7 @@ import s from './Dialogues.module.css';
 import DialogueItem from "./DialogueItem/DialogueItem";
 import Message from "./Message/Message";
 import Answer from "./Answer/Answer";
+import React from "react";
 
 const Dialogues = (props) => {
 
@@ -14,19 +15,30 @@ const Dialogues = (props) => {
         );
 
     let answersElements = props.state.answers
-        .map(a => (<Answer answer={a.answer} />)
-    );
+        .map(a => (<Answer answer={a.answer}/>)
+        );
+
+    let newMessageText = React.createRef();
+
+    let sendMessage = () => {
+        let text = newMessageText.current.value;
+        alert(text);
+    };
 
     return (
         <div className={s.dialogues}>
-            <div className={s.dialoguesItems}>
+            <div>
                 {dialoguesElements}
             </div>
-            <div className={s.messages}>
+            <div>
                 {messagesElements}
             </div>
-            <div className={s.answers}>
+            <div>
                 {answersElements}
+            </div>
+            <div className={s.newMessage}>
+                <textarea ref={newMessageText} rows={3} cols={55}></textarea>
+                <button onClick={sendMessage}>Send</button>
             </div>
         </div>
     );

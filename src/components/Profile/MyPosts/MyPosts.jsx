@@ -12,14 +12,14 @@ let MyPosts = (props) => {
 
     let addPost = () => {
         let text = newPostElement.current.value;
-        alert(text);
+        props.addPost(text);
     }
 
     return (
         <div className={s.postsWrapper}>
             <h4>My posts</h4>
             <div className={s.addPostsWrapper}>
-                <textarea ref={newPostElement} rows='4' cols='100'> Write your message here</textarea>
+                <textarea ref={newPostElement} rows='4' cols='80'> Write your message here</textarea>
                 <button onClick={addPost} className={s.addPostButton}>Add Post</button>
             </div>
             {postsElements}

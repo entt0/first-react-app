@@ -1,36 +1,20 @@
 .dialogues {
     display: grid;
     grid-template-columns: 3fr 5fr 5fr;
+    grid-gap: 10px;
+    grid-template-areas: 'd f a'
+  'n n n';
 }
 
-.dialoguesItems {
-    padding: 10px;
+.newMessage {
+    margin: 0 auto;
+    grid-area: n;
 }
 
-.dialoguesItems a {
-    text-decoration: none;
-    color: black;
-}
+.newMessage button {
+    margin: 10px;
+    background-color: hotpink;
 
-.dialoguesItems a:hover {
-    color: saddlebrown;
-}
-
-.dialoguesItems a:focus {
-    color: brown;
-}
-
-.messages {
-    padding: 10px;
-}
-
-.answers {
-    padding: 10px;
-}
-
-.dialogue img {
-    height: 36px;
-    width: 36px;
-    margin-right: 5px;
-    border-radius: 18px;
+}.newMessage textarea {
+    resize: none;
 }
