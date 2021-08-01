@@ -13,7 +13,8 @@ let state = {
             {id: 1, message: 'My first post: "Hallo, World"', likes: 2},
             {id: 2, message: 'I want to be a programmer', likes: 5},
             {id: 2, message: 'YO', likes: 4},
-        ]
+        ],
+        newPostText:'Write Your Message Here :)'
     },
     dialoguesPage: {
         dialogues: [
@@ -58,25 +59,36 @@ let state = {
             {id: 2, answer: 'Not Bad'},
             {id: 3, answer: ':)'}
         ],
-
+        newAnswer:'',
     }
 }
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
     let newPost = {
-        id:5, message: postMessage, likes:0
+        id:5, message: state.profilePage.newPostText, likes:0
     };
     state.profilePage.posts.push(newPost);
+    state.profilePage.newPostText = '';
     rerenderEntireTree(state);
 }
 
-export let addAnswer = (answerMessage) => {
+export let updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText;
+    rerenderEntireTree(state);
+}
+
+export let addAnswer = () => {
     let newMessage = {
-        id:4, answer:answerMessage
+        id:4, answer: state.dialoguesPage.newAnswer
     };
     state.dialoguesPage.answers.push(newMessage);
+    state.dialoguesPage.newAnswer = '';
     rerenderEntireTree(state);
 };
 
+export let updateAnswerText = (newText) => {
+    state.dialoguesPage.newAnswer = newText;
+    rerenderEntireTree(state);
+}
 
 export default state;
