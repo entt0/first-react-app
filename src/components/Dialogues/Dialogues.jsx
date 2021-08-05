@@ -21,12 +21,13 @@ const Dialogues = (props) => {
     let newMessageText = React.createRef();
 
     let sendMessage = () => {
-        props.addAnswer();
+        props.dispatch({type: 'ADD-ANSWER'});
     };
 
     let updateAnswer = () => {
-        let newText = newMessageText.current.value;
-        props.updateAnswerText(newText);
+        let text = newMessageText.current.value;
+        let action = {type: 'UPDATE-ANSWER-TEXT', newText: text};
+        props.dispatch(action);
     }
 
     return (
@@ -41,7 +42,8 @@ const Dialogues = (props) => {
                 {answersElements}
             </div>
             <div className={s.newMessage}>
-                <textarea value={props.dialoguesPage.newAnswer} onChange={updateAnswer} ref={newMessageText} rows={3} cols={55}/>
+                <textarea value={props.dialoguesPage.newAnswer} onChange={updateAnswer} ref={newMessageText} rows={3}
+                          cols={55}/>
                 <button onClick={sendMessage}>Send</button>
             </div>
         </div>
