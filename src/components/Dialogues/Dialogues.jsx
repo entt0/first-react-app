@@ -3,6 +3,7 @@ import DialogueItem from "./DialogueItem/DialogueItem";
 import Message from "./Message/Message";
 import Answer from "./Answer/Answer";
 import React from "react";
+import {addAnswerActionCreator, updateAnswerTextActionCreator} from "../../redux/state";
 
 const Dialogues = (props) => {
 
@@ -21,12 +22,12 @@ const Dialogues = (props) => {
     let newMessageText = React.createRef();
 
     let sendMessage = () => {
-        props.dispatch({type: 'ADD-ANSWER'});
+        props.dispatch(addAnswerActionCreator());
     };
 
     let updateAnswer = () => {
         let text = newMessageText.current.value;
-        let action = {type: 'UPDATE-ANSWER-TEXT', newText: text};
+        let action = updateAnswerTextActionCreator(text);
         props.dispatch(action);
     }
 

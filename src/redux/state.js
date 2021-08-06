@@ -1,3 +1,8 @@
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const ADD_ANSWER = 'ADD-ANSWER';
+const UPDATE_ANSWER_TEXT = 'UPDATE-ANSWER-TEXT';
+
 let store = {
     _state: {
         sideBar: {
@@ -95,5 +100,10 @@ let store = {
         }
     }
 }
+
+export const addPostActionCreator = () => ({type: ADD_POST});
+export const updateNewPostTextActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text});
+export const addAnswerActionCreator = () => ({type: ADD_ANSWER});
+export const updateAnswerTextActionCreator = (text) => ({type: UPDATE_ANSWER_TEXT, newText: text});
 
 export default store;
