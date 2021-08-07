@@ -43,7 +43,8 @@ const Dialogues = (props) => {
                 {answersElements}
             </div>
             <div className={s.newMessage}>
-                <textarea value={props.dialoguesPage.newAnswer} onChange={updateAnswer} ref={newMessageText} rows={3}
+                <textarea value={props.dialoguesPage.newAnswer} placeholder='Write Your Answer Here :)'
+                          onChange={updateAnswer} ref={newMessageText} rows={3}
                           cols={55}/>
                 <button onClick={sendMessage}>Send</button>
             </div>

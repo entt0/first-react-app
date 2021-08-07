@@ -18,7 +18,7 @@ let store = {
                 {id: 2, message: 'I want to be a programmer', likes: 5},
                 {id: 2, message: 'YO', likes: 4},
             ],
-            newPostText: 'Write Your Message Here :)'
+            newPostText: ''
         },
         dialoguesPage: {
             dialogues: [
