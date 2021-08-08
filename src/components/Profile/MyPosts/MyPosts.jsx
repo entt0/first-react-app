@@ -1,7 +1,7 @@
 import s from "./MyPosts.module.css";
 import Post from "./Post/Post";
 import React from "react";
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/state";
+import {addPostCreator, updateNewPostTextCreator} from "../../../redux/state";
 
 let MyPosts = (props) => {
 
@@ -9,15 +9,13 @@ let MyPosts = (props) => {
         .map(p => (<Post message={p.message} likesCount={p.likes}/>)
         );
 
-    let newPostElement = React.createRef();
-
     let addPost = () => {
-        props.dispatch(addPostActionCreator());
+        props.dispatch(addPostCreator());
     }
 
-    let onPostChange = () => {
-        let text = newPostElement.current.value;
-        let action = updateNewPostTextActionCreator(text);
+    let onPostChange = (e) => {
+        let text = e.target.value;
+        let action = updateNewPostTextCreator(text);
         props.dispatch(action);
     }
 
@@ -25,7 +23,8 @@ let MyPosts = (props) => {
         <div className={s.postsWrapper}>
             <h4>My posts</h4>
             <div className={s.addPostsWrapper}>
-                <textarea value={props.newPostText} placeholder='Write Your Message Here :)' onChange={onPostChange} ref={newPostElement} rows='4' cols='80'/>
+                <textarea value={props.newPostText} placeholder='Write Your Message Here :)' onChange={onPostChange}
+                          rows='4' cols='80'/>
                 <button onClick={addPost} className={s.addPostButton}>Add Post</button>
             </div>
             {postsElements}

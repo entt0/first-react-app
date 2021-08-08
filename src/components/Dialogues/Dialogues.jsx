@@ -1,9 +1,8 @@
 import s from './Dialogues.module.css';
 import DialogueItem from "./DialogueItem/DialogueItem";
 import Message from "./Message/Message";
-import Answer from "./Answer/Answer";
 import React from "react";
-import {addAnswerActionCreator, updateAnswerTextActionCreator} from "../../redux/state";
+import {sendMessageCreator, updateMessageTextCreator} from "../../redux/state";
 
 const Dialogues = (props) => {
 
@@ -15,19 +14,13 @@ const Dialogues = (props) => {
         .map(m => (<Message message={m.message} id={m.id}/>)
         );
 
-    let answersElements = props.dialoguesPage.answers
-        .map(a => (<Answer answer={a.answer}/>)
-        );
-
-    let newMessageText = React.createRef();
-
     let sendMessage = () => {
-        props.dispatch(addAnswerActionCreator());
+        props.dispatch(sendMessageCreator());
     };
 
-    let updateAnswer = () => {
-        let text = newMessageText.current.value;
-        let action = updateAnswerTextActionCreator(text);
+    let updateMessageText = (e) => {
+        let text = e.target.value;
+        let action = updateMessageTextCreator(text);
         props.dispatch(action);
     }
 
@@ -39,12 +32,9 @@ const Dialogues = (props) => {
             <div>
                 {messagesElements}
             </div>
-            <div>
-                {answersElements}
-            </div>
             <div className={s.newMessage}>
-                <textarea value={props.dialoguesPage.newAnswer} placeholder='Write Your Answer Here :)'
-                          onChange={updateAnswer} ref={newMessageText} rows={3}
+                <textarea value={props.dialoguesPage.newMessageText} placeholder='Write Your Answer Here :)'
+                          onChange={updateMessageText} rows={3}
                           cols={55}/>
                 <button onClick={sendMessage}>Send</button>
             </div>

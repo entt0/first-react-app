@@ -1,9 +1,9 @@
 .dialogues {
     display: grid;
-    grid-template-columns: 3fr 5fr 5fr;
+    grid-template-columns: 3fr 10fr;
     grid-gap: 10px;
-    grid-template-areas: 'd f a'
-  'n n n';
+    grid-template-areas: 'd f'
+  'n n';
 }
 
 .newMessage {
@@ -14,7 +14,8 @@
 .newMessage button {
     margin: 10px;
     background-color: hotpink;
+}
 
-}.newMessage textarea {
+.newMessage textarea {
     resize: none;
 }
