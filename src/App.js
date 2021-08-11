@@ -9,11 +9,12 @@ import Settings from "./components/Settings/Settings";
 import {BrowserRouter, Route} from "react-router-dom";
 
 const App = (props) => {
+    debugger;
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
-                <Navbar sidebar={props.state.sideBar}/>
+                <Navbar sidebar={props.state.sidebar}/>
                 <div className='app-wrapper-content'>
                     <Route path='/profile'
                            render={() => <Profile
