@@ -2,11 +2,11 @@ import './App.css';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
-import Dialogues from "./components/Dialogues/Dialogues";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import {BrowserRouter, Route} from "react-router-dom";
+import DialoguesContainer from "./components/Dialogues/DialoguesContainer";
 
 const App = (props) => {
     debugger;
@@ -14,16 +14,12 @@ const App = (props) => {
         <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
-                <Navbar sidebar={props.state.sidebar}/>
+                <Navbar store={props.store}/>
                 <div className='app-wrapper-content'>
                     <Route path='/profile'
-                           render={() => <Profile
-                               profilePage={props.state.profilePage}
-                               dispatch={props.dispatch}/>}/>
+                           render={() => <Profile store={props.store}/>}/>
                     <Route path='/dialogues'
-                           render={() => <Dialogues
-                               dialoguesPage={props.state.dialoguesPage}
-                               dispatch={props.dispatch}/>}/>
+                           render={() => <DialoguesContainer store={props.store}/>}/>
                     <Route path='/news' render={() => <News/>}/>
                     <Route path='/music' render={() => <Music/>}/>
                     <Route path='/settings' render={() => <Settings/>}/>

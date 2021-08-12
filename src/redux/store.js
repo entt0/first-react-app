@@ -4,7 +4,7 @@ import sidebarReducer from "./sidebarReducer";
 
 let store = {
     _state: {
-        sideBar: {
+        sidebar: {
             friends: [
                 {avatar: 'https://sun9-3.userapi.com/impg/ksXQQcCwp06oWQBrXRmIlNlIiWgQBtgnMaCZBw/iYEC2Vt6Urg.jpg?size=1536x864&quality=96&sign=0e4a3492f8335ce6953d40b297f563ae&type=album'},
                 {avatar: 'https://sun9-82.userapi.com/impg/AopnNY6pLkBSSs_QFtQeEZFyD09ZgnNBrqxzcw/8LxR3vDobRM.jpg?size=1133x1133&quality=96&sign=92f91a9f1c55d30944755bf0ed4a61d6&type=album'},

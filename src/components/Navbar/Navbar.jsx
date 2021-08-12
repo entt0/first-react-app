@@ -3,7 +3,8 @@ import Friend from './Friend/Friend';
 import {NavLink} from 'react-router-dom';
 
 const Navbar = (props) => {
-    let friendElements = props.sidebar.friends
+    let state = props.store.getState().sidebar;
+    let friendElements = state.friends
         .map(f => (<Friend avatar={f.avatar}/>)
         );
 
@@ -21,11 +22,11 @@ const Navbar = (props) => {
             <div>
                 <NavLink to='/music' activeClassName={s.activeLink}>Music</NavLink>
             </div>
-            <p></p>
+            <p>_</p>
             <div>
                 <NavLink to='/settings' activeClassName={s.activeLink}>Settings</NavLink>
             </div>
-            <p></p>
+            <p>_</p>
             <div>
                 <NavLink to='/friends' activeClassName={s.activeLink}>Friends</NavLink>
                 {friendElements}

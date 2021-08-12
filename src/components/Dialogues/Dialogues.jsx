@@ -2,26 +2,25 @@ import s from './Dialogues.module.css';
 import DialogueItem from "./DialogueItem/DialogueItem";
 import Message from "./Message/Message";
 import React from "react";
-import {sendMessageCreator, updateMessageTextCreator} from "../../redux/dialoguesReducer";
+
 
 const Dialogues = (props) => {
 
-    let dialoguesElements = props.dialoguesPage.dialogues
+    let dialoguesElements = props.state.dialogues
         .map(d => (<DialogueItem name={d.name} id={d.id} avatar={d.avatar}/>)
         );
 
-    let messagesElements = props.dialoguesPage.messages
+    let messagesElements = props.state.messages
         .map(m => (<Message message={m.message} id={m.id}/>)
         );
 
-    let sendMessage = () => {
-        props.dispatch(sendMessageCreator());
+    let onSendMessage = () => {
+        props.sendMessage();
     };
 
-    let updateMessageText = (e) => {
+    let onUpdateMessageText = (e) => {
         let text = e.target.value;
-        let action = updateMessageTextCreator(text);
-        props.dispatch(action);
+        props.updateMessageText(text);
     }
 
     return (
@@ -33,10 +32,10 @@ const Dialogues = (props) => {
                 {messagesElements}
             </div>
             <div className={s.newMessage}>
-                <textarea value={props.dialoguesPage.newMessageText} placeholder='Write Your Answer Here :)'
-                          onChange={updateMessageText} rows={3}
+                <textarea value={props.state.newMessageText} placeholder='Write Your Answer Here :)'
+                          onChange={onUpdateMessageText} rows={3}
                           cols={55}/>
-                <button onClick={sendMessage}>Send</button>
+                <button onClick={onSendMessage}>Send</button>
             </div>
         </div>
     );
