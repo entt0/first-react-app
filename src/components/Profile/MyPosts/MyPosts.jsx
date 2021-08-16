@@ -4,7 +4,7 @@ import React from "react";
 
 let MyPosts = (props) => {
 
-    let postsElements = props.state.posts
+    let postsElements = props.profilePage.posts
         .map(p => (<Post message={p.message} likesCount={p.likes}/>)
         );
 
@@ -21,7 +21,7 @@ let MyPosts = (props) => {
         <div className={s.postsWrapper}>
             <h4>My posts</h4>
             <div className={s.addPostsWrapper}>
-                <textarea value={props.state.newPostText} placeholder='Write Your Message Here :)' onChange={onPostChange}
+                <textarea value={props.profilePage.newPostText} placeholder='Write Your Message Here :)' onChange={onPostChange}
                           rows='4' cols='80'/>
                 <button onClick={onAddPost} className={s.addPostButton}>Add Post</button>
             </div>

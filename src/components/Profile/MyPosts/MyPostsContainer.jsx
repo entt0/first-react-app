@@ -15,7 +15,7 @@ let MyPostsContainer = (props) => {
     }
 
     return (
-        <MyPosts state={state} changePost={changePost} addPost={addPost}/>
+        <MyPosts profilePage={state} changePost={changePost} addPost={addPost}/>
     );
 }
 

@@ -6,11 +6,11 @@ import React from "react";
 
 const Dialogues = (props) => {
 
-    let dialoguesElements = props.state.dialogues
+    let dialoguesElements = props.dialoguesPage.dialogues
         .map(d => (<DialogueItem name={d.name} id={d.id} avatar={d.avatar}/>)
         );
 
-    let messagesElements = props.state.messages
+    let messagesElements = props.dialoguesPage.messages
         .map(m => (<Message message={m.message} id={m.id}/>)
         );
 
@@ -32,7 +32,7 @@ const Dialogues = (props) => {
                 {messagesElements}
             </div>
             <div className={s.newMessage}>
-                <textarea value={props.state.newMessageText} placeholder='Write Your Answer Here :)'
+                <textarea value={props.dialoguesPage.newMessageText} placeholder='Write Your Answer Here :)'
                           onChange={onUpdateMessageText} rows={3}
                           cols={55}/>
                 <button onClick={onSendMessage}>Send</button>

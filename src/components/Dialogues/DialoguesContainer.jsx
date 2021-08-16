@@ -14,7 +14,7 @@ const DialoguesContainer = (props) => {
         props.store.dispatch(action);
     }
 
-    return <Dialogues state={state} sendMessage={sendMessage} updateMessageText={updateMessageText}/>;
+    return <Dialogues dialoguesPage={state} sendMessage={sendMessage} updateMessageText={updateMessageText}/>;
 }
 
 export default DialoguesContainer;

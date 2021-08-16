@@ -1,12 +1,12 @@
 import './App.css';
 import Header from './components/Header/Header';
-import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import {BrowserRouter, Route} from "react-router-dom";
 import DialoguesContainer from "./components/Dialogues/DialoguesContainer";
+import NavbarContainer from "./components/Navbar/NavbarContainer";
 
 const App = (props) => {
     debugger;
@@ -14,7 +14,7 @@ const App = (props) => {
         <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
-                <Navbar store={props.store}/>
+                <NavbarContainer store={props.store}/>
                 <div className='app-wrapper-content'>
                     <Route path='/profile'
                            render={() => <Profile store={props.store}/>}/>
