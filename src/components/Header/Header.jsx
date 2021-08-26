@@ -4,7 +4,7 @@ const Header = () => {
     return (
         <header className={s.header}>
             <img alt='logo of app'
-                 src='https://avatars.mds.yandex.net/get-images-cbir/2029174/SlhCvlrm7Wl6qxC-sUF57A9659/ocr'/>
+                 src='https://sun9-26.userapi.com/impg/SdG9NSFTmr3hIhZjMmcQlkgzLiki3q4auMKi8w/QvNTEfEaygc.jpg?size=500x500&quality=96&sign=639305ba38bdec448ee959a41c09384a&type=album'/>
         </header>
     );
 }

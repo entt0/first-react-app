@@ -7,7 +7,7 @@ import React from "react";
 const Dialogues = (props) => {
 
     let dialoguesElements = props.dialoguesPage.dialogues
-        .map(d => (<DialogueItem name={d.name} id={d.id} avatar={d.avatar}/>)
+        .map(d => (<DialogueItem key={d.id} name={d.name} id={d.id} avatar={d.avatar}/>)
         );
 
     let messagesElements = props.dialoguesPage.messages

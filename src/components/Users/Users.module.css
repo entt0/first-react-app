@@ -1,0 +1,19 @@
+.obj {
+    margin: 20px;
+    display: inline-block;
+}
+
+.avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 70px;
+}
+
+button {
+    background-color: pink;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: hotpink;
+}

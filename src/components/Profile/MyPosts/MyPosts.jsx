@@ -5,7 +5,7 @@ import React from "react";
 let MyPosts = (props) => {
 
     let postsElements = props.profilePage.posts
-        .map(p => (<Post message={p.message} likesCount={p.likes}/>)
+        .map(p => (<Post key={p.id} message={p.message} likesCount={p.likes}/>)
         );
 
     let onAddPost = () => {
