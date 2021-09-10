@@ -4,9 +4,14 @@
   }
 
 .header img {
-    display: block;
+    display: inline-block;
     margin-top: 0px;
     margin-left: 30px;
     width: 69px;
     height: 69px;
+}
+
+.webName {
+    display: inline-block;
+    font-size: 20px;
 }

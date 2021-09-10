@@ -6,6 +6,7 @@ const Header = () => {
     return (
         <header className={s.header}>
             <img alt='logo of app' src={main}/>
+            <div className={s.webName}>Users' Universe</div>
         </header>
     );
 }
