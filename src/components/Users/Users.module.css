@@ -17,3 +17,23 @@ button {
 button:hover {
     background-color: hotpink;
 }
+
+.numbersWrapper {
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.pageNumber {
+    padding: 5px;
+    font-size: 17px;
+}
+
+.pageNumber:hover {
+    color: saddlebrown;
+}
+
+.selectedPage {
+    font-weight: bold;
+    color: brown;
+    font-size: 19px;
+}
