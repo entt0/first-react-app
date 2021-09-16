@@ -3,8 +3,6 @@ import Users from "./Users";
 import {followAC, setPageAC, setTotalUsersAC, setUserAC, unfollowAC} from "../../redux/usersReducer";
 import React from "react";
 import * as axios from "axios";
-import s from "./Users.module.css";
-import userPhoto from "../../assets/Images/user.svg";
 
 class UsersAPIContainer extends React.Component {
 
