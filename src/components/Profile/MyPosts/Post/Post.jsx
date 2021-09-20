@@ -1,9 +1,10 @@
 import s from "./Post.module.css";
+import userPhoto from './../../../../assets/Images/user.svg'
 
 let Post = (props) => {
     return (
         <div className={s.block}>
-            <img alt='avatar from Sender' className={s.ava} src='https://sun9-43.userapi.com/impg/IVw0Qv9C6ppB6rtMuOt6-rf0PUWUU0MSdFiJlg/2Hp3E30riJQ.jpg?size=850x850&quality=96&sign=9abc79847d39550810a0c89c9d8bea88&type=album' />
+            <img alt='avatar from Sender' className={s.ava} src={userPhoto} />
             <div className={s.item}>
                 {props.message}
             </div>

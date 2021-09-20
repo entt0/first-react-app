@@ -1,6 +1,11 @@
 import s from './ProfileInfo.module.css';
+import Preloader from "../../common/Preloader/Preloader";
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
+    if (!props.profile) {
+        return <Preloader/>
+    }
+
     return (
         <div>
             <div className={s.backgroundImg}>
@@ -9,15 +14,14 @@ const ProfileInfo = () => {
             </div>
             <div className={s.avatarAndDescription}>
                 <img alt='avatar of User'
-                     src='https://sun9-26.userapi.com/impg/SdG9NSFTmr3hIhZjMmcQlkgzLiki3q4auMKi8w/QvNTEfEaygc.jpg?size=500x500&quality=96&sign=639305ba38bdec448ee959a41c09384a&type=album'/>
+                     src={props.profile.photos.large}/>
                 <div>
-                    Kerb69
+                    {props.profile.fullName}
                 </div>
                 <div>
-                    Age: 23
+                    {props.profile.contacts.vk}
                 </div>
             </div>
-
         </div>
     );
 }
