@@ -1,7 +1,7 @@
 import s from './Users.module.css';
 import userPhoto from '../../assets/Images/user.svg';
 import {NavLink} from "react-router-dom";
-import * as axios from "axios";
+import {usersAPI} from "../../api/api";
 
 let Users = (props) => {
 
@@ -11,7 +11,7 @@ let Users = (props) => {
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i);
     }
-    
+
     return (
         <div>
             <div className={s.numbersWrapper}>
@@ -33,13 +33,9 @@ let Users = (props) => {
                         </NavLink>
                         {u.followed
                             ? <button onClick={() => {
-                                axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,
-                                    {
-                                        withCredentials: true,
-                                        headers: {'API-KEY': '124a82dc-5ca5-4236-a5c2-61c8d456d8dc'}
-                                    })
-                                    .then(response => {
-                                        if (response.data.resultCode === 0) {
+                                usersAPI.deleteFriend(u.id)
+                                    .then(data => {
+                                        if (data.resultCode === 0) {
                                             props.unfollow(u.id)
                                         }
                                     })
@@ -47,13 +43,9 @@ let Users = (props) => {
                             }>
                                 Unfollow</button>
                             : <button onClick={() => {
-                                axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {},
-                                    {
-                                        withCredentials: true,
-                                        headers: {'API-KEY': '124a82dc-5ca5-4236-a5c2-61c8d456d8dc'}
-                                    })
-                                    .then(response => {
-                                        if (response.data.resultCode === 0) {
+                                usersAPI.addFriend(u.id)
+                                    .then(data => {
+                                        if (data.resultCode === 0) {
                                             props.follow(u.id)
                                         }
                                     })
