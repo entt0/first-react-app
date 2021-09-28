@@ -14,5 +14,10 @@
 }
 
 .like {
+    background-color: pink;
+    border-radius: 5px;
+}
+
+.like:hover {
     background-color: hotpink;
 }

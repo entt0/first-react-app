@@ -9,12 +9,14 @@
     border-radius: 70px;
 }
 
-button {
+.followButton {
+    display: block;
     background-color: pink;
     border-radius: 5px;
+    width: 65px;
 }
 
-button:hover {
+.followButton:hover {
     background-color: hotpink;
 }
 
@@ -36,4 +38,8 @@ button:hover {
     font-weight: bold;
     color: brown;
     font-size: 19px;
+}
+
+.description {
+    display: block;
 }
