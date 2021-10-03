@@ -19,10 +19,10 @@ let MyPosts = (props) => {
 
     return (
         <div className={s.postsWrapper}>
-            <h4>My posts</h4>
+            <h4>Posts</h4>
             <div className={s.addPostsWrapper}>
                 <textarea value={props.profilePage.newPostText} placeholder='Write Your Message Here :)' onChange={onPostChange}
-                          rows='4' cols='80'/>
+                          rows='4' cols='55'/>
                 <button onClick={onAddPost} className={s.addPostButton}>Add Post</button>
             </div>
             {postsElements}

@@ -1,6 +1,8 @@
 .avatarAndDescription {
     display: inline-block;
     width: 100%;
+    margin-top: 10px;
+    background-color: beige;
 }
 
 .backgroundImg img {
@@ -8,12 +10,13 @@
     width: 100%;
 }
 
-.avatarAndDescription img {
-    float: left;
-    height: 180px;
-}
-
 .avatarAndDescription div {
     margin-top: 20px;
     margin-left: 200px;
+}
+
+.userAva {
+    border: 1px solid black;
+    float: left;
+    height: 180px;
 }

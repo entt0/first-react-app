@@ -1,6 +1,7 @@
 .postsWrapper {
     display: block;
-    margin: 10px;
+    margin: 0px;
+    background-color: lightgoldenrodyellow;
 }
 
 .addPostsWrapper {
@@ -14,7 +15,8 @@
 }
 
 .addPostsWrapper textarea {
-    border: black 2px solid;
+    border: black 1px solid;
     resize: none;
+    border-radius: 10px;
 }
 

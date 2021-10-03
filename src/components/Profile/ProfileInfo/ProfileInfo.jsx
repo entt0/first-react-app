@@ -14,8 +14,8 @@ const ProfileInfo = (props) => {
                      src='https://www.hd-freewallpapers.com/latest-wallpapers/desktop-funny-images-of-dogs-and-puppies-download.jpg'/>
             </div>
             <div className={s.avatarAndDescription}>
-                {!props.profile.photos.large ? <img alt='avatar of User' src={user}/>
-                    : <img alt='avatar of User' src={props.profile.photos.large}/>}
+                {!props.profile.photos.large ? <img className={s.userAva} alt='avatar of User' src={user}/>
+                    : <img className={s.userAva} alt='avatar of User' src={props.profile.photos.large}/>}
                 <div>
                     {props.profile.fullName}
                 </div>

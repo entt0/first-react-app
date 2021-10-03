@@ -78,6 +78,7 @@ export const setPage = (pageNumber) => ({type: SET_PAGE_NUMBER, pageNumber});
 export const setTotalUsersNumber = (totalCount) => ({type: SET_TOTAL_USERS, totalCount});
 export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching});
 export const toggleIsFollowing = (isFollowing, userId) => ({type: TOGGLE_IS_FOLLOWING, isFollowing, userId});
+
 export const getUsersThunk = (pageSize, currentPage) => {
     return (dispatch) => {
         dispatch(toggleIsFetching(true));
@@ -88,6 +89,7 @@ export const getUsersThunk = (pageSize, currentPage) => {
         });
     }
 };
+
 export const changePage = (pageSize, page) => {
     return (dispatch) => {
         dispatch(toggleIsFetching(true));
@@ -99,18 +101,7 @@ export const changePage = (pageSize, page) => {
             });
     }
 };
-export const unfollow = (userId) => {
-    return (dispatch) => {
-        dispatch(toggleIsFollowing(true, userId));
-        usersAPI.deleteFriend(userId)
-            .then(data => {
-                if (data.resultCode === 0) {
-                    dispatch(unfollowSuccess(userId));
-                }
-                dispatch(toggleIsFollowing(false, userId));
-            });
-    }
-};
+
 export const follow = (userId) => {
     return (dispatch) => {
         dispatch(toggleIsFollowing(true, userId));
@@ -124,6 +115,18 @@ export const follow = (userId) => {
     }
 };
 
+export const unfollow = (userId) => {
+    return (dispatch) => {
+        dispatch(toggleIsFollowing(true, userId));
+        usersAPI.deleteFriend(userId)
+            .then(data => {
+                if (data.resultCode === 0) {
+                    dispatch(unfollowSuccess(userId));
+                }
+                dispatch(toggleIsFollowing(false, userId));
+            });
+    }
+};
 
 export default usersReducer;
 
