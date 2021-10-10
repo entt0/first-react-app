@@ -1,6 +1,7 @@
 import s from './ProfileInfo.module.css';
 import Preloader from "../../common/Preloader/Preloader";
 import user from './../../../assets/Images/user.svg'
+import UserStatus from "./UserStatus/UserStatus";
 
 const ProfileInfo = (props) => {
     if (!props.profile) {
@@ -9,16 +10,13 @@ const ProfileInfo = (props) => {
 
     return (
         <div>
-            <div className={s.backgroundImg}>
-                <img alt='background img'
-                     src='https://www.hd-freewallpapers.com/latest-wallpapers/desktop-funny-images-of-dogs-and-puppies-download.jpg'/>
-            </div>
             <div className={s.avatarAndDescription}>
                 {!props.profile.photos.large ? <img className={s.userAva} alt='avatar of User' src={user}/>
                     : <img className={s.userAva} alt='avatar of User' src={props.profile.photos.large}/>}
                 <div>
                     {props.profile.fullName}
                 </div>
+                <UserStatus status={'Hi'}/>
                 <div>
                     {props.profile.contacts.vk}
                 </div>

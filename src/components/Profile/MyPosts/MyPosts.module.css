@@ -10,8 +10,12 @@
 
 .addPostButton {
     margin-left: 10px;
-    background-color: antiquewhite;
+    background-color: pink;
     border-radius: 7px;
+}
+
+.addPostButton:hover {
+    background-color: hotpink;
 }
 
 .addPostsWrapper textarea {

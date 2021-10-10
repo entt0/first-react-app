@@ -1,0 +1,13 @@
+.saveButton {
+    margin-left: 10px;
+    background-color: pink;
+    border-radius: 7px;
+}
+
+.saveButton:hover {
+    background-color: hotpink;
+}
+
+.statusText:hover {
+    color: saddlebrown;
+}
