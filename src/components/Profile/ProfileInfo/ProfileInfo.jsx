@@ -2,6 +2,7 @@ import s from './ProfileInfo.module.css';
 import Preloader from "../../common/Preloader/Preloader";
 import user from './../../../assets/Images/user.svg'
 import UserStatus from "./UserStatus/UserStatus";
+import {updateUserStatus} from "../../../redux/profileReducer";
 
 const ProfileInfo = (props) => {
     if (!props.profile) {
@@ -16,7 +17,7 @@ const ProfileInfo = (props) => {
                 <div>
                     {props.profile.fullName}
                 </div>
-                <UserStatus status={'Hi'}/>
+                <UserStatus status={props.status} updateUserStatus={props.updateUserStatus}/>
                 <div>
                     {props.profile.contacts.vk}
                 </div>
