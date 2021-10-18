@@ -1,6 +1,5 @@
 import React from "react";
 import s from './UserStatus.module.css'
-import {updateUserStatus} from "../../../../redux/profileReducer";
 
 class UserStatus extends React.Component {
     state = {
@@ -23,6 +22,12 @@ class UserStatus extends React.Component {
 
     onStatusChange = (e) => {
         this.setState({status: e.currentTarget.value});
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.status !== this.props.status) {
+            this.setState({status: this.props.status});
+        }
     }
 
     render() {
