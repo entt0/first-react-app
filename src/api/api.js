@@ -40,10 +40,12 @@ export const authAPI = {
     checkAuthorization() {
         return instance.get(`auth/me`)
             .then(response => response.data)
+    },
+    sendLoginFormData(email,password, rememberMe){
+        return instance.post(`auth/login`, {email,password, rememberMe})
+            .then(response => response.data)
     }
 }
-
-
 
 
 

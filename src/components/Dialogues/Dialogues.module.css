@@ -11,12 +11,3 @@
     margin: 0 auto;
     grid-area: n;
 }
-
-.newMessage button {
-    margin: 10px;
-    background-color: hotpink;
-}
-
-.newMessage textarea {
-    resize: none;
-}

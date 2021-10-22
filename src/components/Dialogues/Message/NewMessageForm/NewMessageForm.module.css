@@ -1,0 +1,18 @@
+.newMessageButton {
+    margin: 10px;
+    background-color: pink;
+    border-radius: 7px;
+}
+
+.newMessageButton:hover {
+    background-color: hotpink;
+}
+
+.newMessageTextarea {
+    border: black 1px solid;
+    resize: none;
+    border-radius: 10px;
+}
+
+
+

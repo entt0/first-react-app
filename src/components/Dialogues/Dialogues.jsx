@@ -3,9 +3,13 @@ import DialogueItem from "./DialogueItem/DialogueItem";
 import Message from "./Message/Message";
 import React from "react";
 import {Redirect} from "react-router-dom";
+import NewMessageForm from "./Message/NewMessageForm/NewMessageForm";
+import {reduxForm} from "redux-form";
 
 
 const Dialogues = (props) => {
+
+    const NewMessageReduxForm = reduxForm({form: 'newMessageForm'})(NewMessageForm)
 
     let dialoguesElements = props.dialoguesPage.dialogues
         .map(d => (<DialogueItem key={d.id} name={d.name} id={d.id} avatar={d.avatar}/>)
@@ -15,17 +19,12 @@ const Dialogues = (props) => {
         .map(m => (<Message message={m.message} id={m.id}/>)
         );
 
-    let onSendMessage = () => {
-        props.sendMessage();
+    const onSubmit = (formData) => {
+        props.sendMessage(formData.newMessageText);
     };
 
-    let onUpdateMessageText = (e) => {
-        let text = e.target.value;
-        props.updateMessageText(text);
-    }
+    if (!props.isAuth) return <Redirect to={'/login'}/>
 
-    if (!props.isAuth) return <Redirect to={'/login'} />
-    
     return (
         <div className={s.dialogues}>
             <div>
@@ -35,13 +34,11 @@ const Dialogues = (props) => {
                 {messagesElements}
             </div>
             <div className={s.newMessage}>
-                <textarea value={props.dialoguesPage.newMessageText} placeholder='Write Your Answer Here :)'
-                          onChange={onUpdateMessageText} rows={3}
-                          cols={55}/>
-                <button onClick={onSendMessage}>Send</button>
+                <NewMessageReduxForm onSubmit={onSubmit}/>
             </div>
         </div>
     );
 }
+
 
 export default Dialogues;

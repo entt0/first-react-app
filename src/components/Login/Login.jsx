@@ -1,13 +1,12 @@
 import LoginForm from "./LoginForm/LoginForm";
 import {reduxForm} from "redux-form";
+import {authAPI} from "../../api/api";
 
-const LoginReduxForm = reduxForm({
-    form: 'login'
-})(LoginForm)
+const LoginReduxForm = reduxForm({form: 'login'})(LoginForm)
 
 const onSubmit = (formData) => {
-// задиспачить эти данные в thunk и отправить на сервак, чтобы залогиниться
-// кроме того, надо законнектить Login в store как обычно
+    authAPI.sendLoginFormData(formData.email, formData.password, formData.rememberMe)
+    authAPI.checkAuthorization()
 }
 
 const Login = (props) => {
