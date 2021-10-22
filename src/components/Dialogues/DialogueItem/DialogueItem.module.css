@@ -20,4 +20,9 @@
     width: 36px;
     margin-right: 5px;
     border-radius: 18px;
+    border: 1px solid black;
+}
+
+.names {
+    display: inline-block;
 }

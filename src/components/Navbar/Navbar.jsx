@@ -1,11 +1,7 @@
 import s from './Navbar.module.css';
-import Friend from './Friend/Friend';
 import {NavLink} from 'react-router-dom';
 
 const Navbar = (props) => {
-    let friendElements = props.sidebar.friends
-        .map(f => (<Friend avatar={f.avatar}/>)
-        );
 
     return (
         <nav className={s.nav}>
@@ -27,14 +23,6 @@ const Navbar = (props) => {
             <div>
                 <NavLink to='/users' activeClassName={s.activeLink}>All Users</NavLink>
             </div>
-            <p>_</p>
-            <div>
-                <NavLink to='/friends' activeClassName={s.activeLink}>Your Friends</NavLink>
-            </div>
-            <div>
-                {friendElements}
-            </div>
-
         </nav>
     );
 }

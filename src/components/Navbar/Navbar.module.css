@@ -3,14 +3,16 @@
     grid-area: n;
     padding-left: 15px;
     padding-top: 20px;
+    height: 305px;
 }
 
 .nav a {
     display: block;
     text-decoration: none;
     color: black;
-    font-size: 17px;
-    padding-top: 3px;
+    font-size: 18px;
+    padding-top: 5px;
+    margin-left: 15px;
 }
 
 .nav a.activeLink {
