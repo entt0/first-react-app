@@ -18,12 +18,16 @@ let MyPosts = (props) => {
 
 
     return (
-        <div className={s.postsWrapper}>
-            <h4>Posts</h4>
+        <div className={s.PostsWrapper}>
+            <div className={s.postsHeader}>
+                <h4>ALL POSTS</h4>
+            </div>
             <div className={s.addPostsWrapper}>
                 <PostReduxForm onSubmit={onSubmit}/>
             </div>
-            {postsElements}
+            <div className={s.postsElements}>
+                {postsElements}
+            </div>
         </div>
     );
 }

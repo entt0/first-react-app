@@ -1,0 +1,20 @@
+.loginInput {
+    height: 25px;
+    border-radius: 7px;
+}
+
+.passwordInput {
+    border-radius: 7px;
+    height: 25px;
+}
+
+.loginButton {
+    margin-left: 10px;
+    margin-top: 10px;
+    background-color: pink;
+    border-radius: 7px;
+}
+
+.loginButton:hover {
+    background-color: hotpink;
+}

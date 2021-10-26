@@ -1,25 +1,32 @@
-.block {
+.postBlock {
     display: block;
     margin-bottom: 20px;
+    background-color: #f8f8c8;
+    padding: 10px;
+    border-radius: 15px;
 }
 
-.item {
+.postMessage {
     color: chocolate;
 }
 
-.ava {
+.userAva {
     width: 50px;
     height: 50px;
     border-radius: 50px;
     border: 1px solid black;
 }
 
-.like {
+.likeButton {
     margin-top: 7px;
     background-color: pink;
     border-radius: 5px;
 }
 
-.like:hover {
+.likeButton:hover {
     background-color: hotpink;
+}
+
+.likesSpan {
+    margin-left: 10px;
 }
