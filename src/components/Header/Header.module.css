@@ -24,6 +24,11 @@
     text-decoration: none;
 }
 
-.loginBlock:hover {
-    color:saddlebrown;
+.logoutButton {
+    background-color: pink;
+    border-radius: 7px;
+}
+
+.logoutButton:hover {
+    background-color: hotpink;
 }

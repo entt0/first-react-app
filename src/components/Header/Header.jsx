@@ -7,12 +7,12 @@ const Header = (props) => {
         <header className={s.header}>
             <img alt='logo of app' src={main}/>
             <h1 className={s.webName}>Users' Universe</h1>
-            {props.isAuth === true ?
-                <div className={s.loginBlock}>
-                    <span>logged in as:</span>
+            {props.isAuth === true
+                ? <div className={s.loginBlock}>
                     <div>{props.login}</div>
+                    <button onClick={props.logout} className={s.logoutButton}>Log Out</button>
                 </div>
-                : <NavLink to={'/login'} className={s.loginBlock}>Login</NavLink>}
+                : <NavLink to={'/login'} className={s.loginBlock}>Log In</NavLink>}
         </header>
     );
 }

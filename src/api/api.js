@@ -31,7 +31,7 @@ export const profileAPI = {
             .then(response => response.data)
     },
     updateStatus(status) {
-        return instance.put(`profile/status`,{status})
+        return instance.put(`profile/status`, {status})
             .then(response => response.data)
     },
 }
@@ -39,11 +39,15 @@ export const profileAPI = {
 export const authAPI = {
     checkAuthorization() {
         return instance.get(`auth/me`)
-            .then(response => response.data)
+            .then(response => response.data);
     },
-    sendLoginFormData(email,password, rememberMe){
-        return instance.post(`auth/login`, {email,password, rememberMe})
-            .then(response => response.data)
+    sendLoginFormData(email, password, rememberMe = false) {
+        return instance.post(`auth/login`, {email, password, rememberMe})
+            .then(response => response.data);
+    },
+    logoutUser() {
+        return instance.delete(`auth/login`)
+            .then(response => response.data);
     }
 }
 
