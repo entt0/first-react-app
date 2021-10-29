@@ -18,3 +18,8 @@
 .loginButton:hover {
     background-color: hotpink;
 }
+
+.errorMessage {
+    color: red;
+    padding-bottom: 10px;
+}

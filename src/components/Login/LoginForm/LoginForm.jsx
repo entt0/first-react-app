@@ -5,10 +5,14 @@ import {Element} from "../../common/FormsControls/FormsControls";
 
 const Input = Element('Input');
 const maxLength20 = maxLength(20);
+const maxLength40 = maxLength(40);
 
 const LoginForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
+            <div className={s.errorMessage}>
+                {props.error}
+            </div>
             <div>
                 <Field className={s.loginInput}
                        placeholder="email"
@@ -23,7 +27,7 @@ const LoginForm = (props) => {
                        name={'password'}
                        component={Input}
                        type={'password'}
-                       validate={[requiredField, maxLength20]}
+                       validate={[requiredField, maxLength40]}
                 />
             </div>
             <div>
