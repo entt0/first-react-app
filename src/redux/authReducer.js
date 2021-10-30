@@ -33,7 +33,6 @@ export const authUser = () => {
                     dispatch(setUserData(login, email, id, true));
                 }
             });
-        return 'to'
     }
 }
 
