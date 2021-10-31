@@ -1,4 +1,4 @@
-export const requiredField = value => value ? undefined : 'This Field is Required, Guys :(';
+export const requiredField = value => value ? undefined : 'This Field is Required, Guy :(';
 
 export const maxLength = max => value =>
     value && value.length > max ? `Must be ${max} symbols or less` : undefined

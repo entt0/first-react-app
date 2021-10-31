@@ -4,6 +4,7 @@
 
 .spanControl span {
     color: red;
+    font-size: smaller;
 }
 
 .formControl.error textarea {

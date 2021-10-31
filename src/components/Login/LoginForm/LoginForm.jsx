@@ -4,8 +4,7 @@ import s from './LoginForm.module.css'
 import {Element} from "../../common/FormsControls/FormsControls";
 
 const Input = Element('Input');
-const maxLength20 = maxLength(20);
-const maxLength40 = maxLength(40);
+const maxLength60 = maxLength(60);
 
 const LoginForm = (props) => {
     return (
@@ -18,7 +17,7 @@ const LoginForm = (props) => {
                        placeholder="email"
                        name={'email'}
                        component={Input}
-                       validate={[requiredField, maxLength20, email]}
+                       validate={[requiredField, maxLength60, email]}
                 />
             </div>
             <div>
@@ -27,7 +26,7 @@ const LoginForm = (props) => {
                        name={'password'}
                        component={Input}
                        type={'password'}
-                       validate={[requiredField, maxLength40]}
+                       validate={[requiredField, maxLength60]}
                 />
             </div>
             <div>

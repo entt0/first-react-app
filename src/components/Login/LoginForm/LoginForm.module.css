@@ -22,4 +22,5 @@
 .errorMessage {
     color: red;
     padding-bottom: 10px;
+    font-size: smaller;
 }

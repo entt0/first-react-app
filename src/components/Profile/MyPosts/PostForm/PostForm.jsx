@@ -5,7 +5,7 @@ import {maxLength} from "../../../../utils/validators/validators";
 import {Element} from "../../../common/FormsControls/FormsControls";
 
 const Textarea = Element('textarea');
-const maxLength150 = maxLength(150)
+const maxLength150 = maxLength(150);
 
 const PostForm = (props) => {
     return (
