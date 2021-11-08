@@ -1,6 +1,6 @@
 import s from "./Post.module.css";
 import userPhoto from './../../../../assets/Images/user.svg'
-import {useEffect, useState} from "react";
+import {useState} from "react";
 
 let Post = (props) => {
 

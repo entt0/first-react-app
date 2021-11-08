@@ -16,7 +16,7 @@ export const usersAPI = {
             .then(response => response.data)
     },
     addFriend(id) {
-        return instance.post(`https://social-network.samuraijs.com/api/1.0/follow/${id}`)
+        return instance.post(`follow/${id}`)
             .then(response => response.data)
     }
 }
@@ -34,6 +34,17 @@ export const profileAPI = {
         return instance.put(`profile/status`, {status})
             .then(response => response.data)
     },
+    changeAvatar(photos) {
+        const formData = new FormData();
+        formData.append('image', photos);
+
+        return instance.put(`profile/photo`, formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        })
+            .then(response => response.data)
+    }
 }
 
 export const authAPI = {
@@ -50,7 +61,3 @@ export const authAPI = {
             .then(response => response.data);
     }
 }
-
-
-
-
