@@ -1,11 +1,10 @@
 import {profileAPI} from "../api/api";
 
-const ADD_POST = 'ADD-POST';
-const SET_USER_PROFILE = 'SET_USER_PROFILE';
-const SET_STATUS = 'SET_STATUS';
-const CHANGE_PHOTO = 'CHANGE_PHOTO';
-const DELETE_POST = 'DELETE_POST'
-
+const ADD_POST = 'profileReducer/ADD-POST';
+const SET_USER_PROFILE = 'profileReducer/SET_USER_PROFILE';
+const SET_STATUS = 'profileReducer/SET_STATUS';
+const CHANGE_PHOTO = 'profileReducer/CHANGE_PHOTO';
+const DELETE_POST = 'profileReducer/DELETE_POST'
 
 
 let initialState = {
@@ -62,44 +61,37 @@ export const changePhoto = (photos) => ({type: CHANGE_PHOTO, photos});
 export const deletePost = (postId) => ({type: DELETE_POST, postId})
 
 
-export const getProfile = (userId) => {
-    return (dispatch) => {
-        profileAPI.setProfile(userId)
-            .then(data => {
-                dispatch(setUserProfile(data));
-            });
-    }
+export const getProfile = (userId) => async (dispatch) => {
+    let data = await profileAPI.setProfile(userId);
+    dispatch(setUserProfile(data));
 }
 
-export const getUserStatus = (userId) => {
-    return (dispatch) => {
-        profileAPI.getStatus(userId)
-            .then(data => {
-                dispatch(setStatus(data));
-            });
-    }
+
+export const getUserStatus = (userId) => async (dispatch) => {
+    let data = await profileAPI.getStatus(userId);
+    dispatch(setStatus(data));
+
 }
 
-export const updateUserStatus = (status) => {
-    return (dispatch) => {
-        profileAPI.updateStatus(status)
-            .then(data => {
-                if (data.resultCode === 0) {
-                    dispatch(setStatus(status));
-                }
-            });
+
+export const updateUserStatus = (status) => async (dispatch) => {
+    let data = await profileAPI.updateStatus(status)
+
+    if (data.resultCode === 0) {
+        dispatch(setStatus(status));
     }
+
 }
 
-export const updateUserPhoto = (image) => {
-    return (dispatch) => {
-        profileAPI.changeAvatar(image)
-            .then(data => {
-                if (data.resultCode === 0) {
-                    dispatch(changePhoto(image))
-                }
-            });
+
+export const updateUserPhoto = (image) => async (dispatch) => {
+    let data = await profileAPI.changeAvatar(image)
+
+    if (data.resultCode === 0) {
+        dispatch(changePhoto(image))
     }
+
 }
+
 
 export default profileReducer;

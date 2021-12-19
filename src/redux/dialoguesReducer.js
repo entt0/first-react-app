@@ -1,6 +1,6 @@
 import ava from '../assets/Images/user.svg'
 
-const SEND_MESSAGE = 'SEND-MESSAGE';
+const SEND_MESSAGE = 'dialoguesReducer/SEND-MESSAGE';
 
 let initialState = {
     dialogues: [

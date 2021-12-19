@@ -1,6 +1,7 @@
 import s from './Users.module.css';
 import userPhoto from '../../assets/Images/user.svg';
 import {NavLink} from "react-router-dom";
+import {useState} from "react";
 
 let Users = (props) => {
 
@@ -11,17 +12,36 @@ let Users = (props) => {
         pages.push(i);
     }
 
+    let portionSize = 10;
+    let portionCount = Math.ceil(pagesCount / portionSize);
+    let [portionNumber, setPortionNumber] = useState(1);
+    let leftPotionNumber = (portionNumber - 1) * portionSize + 1;
+    let rightPortionNumber = portionNumber * portionSize;
+
     return (
         <div>
             <div className={s.numbersWrapper}>
-                {pages.map(p => {
-                    if (p <= 30) {
+
+                {portionNumber > 1 &&
+                <button onClick={() => {
+                    setPortionNumber(portionNumber - 1)
+                }}>BACK</button>
+                }
+
+                {pages
+                    .filter(p => p >= leftPotionNumber && p <= rightPortionNumber)
+                    .map(p => {
                         return <span className={`${s.pageNumber} ${props.currentPage === p && s.selectedPage}`}
                                      onClick={() => {
                                          props.onPageChanged(p)
                                      }}>{p}</span>
-                    }
-                })}
+                    })}
+
+                {portionCount > portionNumber &&
+                <button onClick={() => {
+                    setPortionNumber(portionNumber + 1)
+                }}>NEXT</button>}
+
             </div>
             <div>
                 {props.users.map(u =>
